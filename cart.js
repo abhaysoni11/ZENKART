@@ -80,7 +80,7 @@ let buttonTag = document.createElement('button')
 buttonDiv.appendChild(buttonTag)
 
 let buttonLink = document.createElement('a')
-buttonLink.href = '/orderPlaced.html'
+buttonLink.href = 'https://rzp.io/l/ILKpsJx'
 buttonTag.appendChild(buttonLink)
 
 buttonText = document.createTextNode('Place Order')
@@ -137,7 +137,3 @@ httpRequest.onreadystatechange = function()
 
 httpRequest.open('GET', 'https://5d76bf96515d1a0014085cf9.mockapi.io/product', true)
 httpRequest.send()
-
-
-
-
