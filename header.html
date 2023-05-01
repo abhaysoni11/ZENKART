@@ -13,7 +13,28 @@
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <script src="./userLoginData/userDataModel.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        (async function(){
+            var email = userCredData.email;
+            try{
+            const response = await axios.get("http://127.0.0.1:8080/getName",{
+              params : {
+                Email : email,
+              }
+            })
+            if(response.data!="")
+            {
+             console.log("Client Data",response.data);
+            }else{
+             
+            }
+          }catch(e){
+            console.log("Error To Make get Api Call ::::::: ",e);
+          }
+        })()  
+    </script>
     <header>
         <section>
             <!-- MAIN CONTAINER -->
@@ -33,6 +54,7 @@
                     <!-- USER SECTION (CART AND USER ICON) -->
                     <div id="user">
                         <a href="cart.html"> <i class="fas fa-shopping-cart addedToCart"><div id="badge"> 0 </div></i></a>
+                        <p id = 'myname'>MyUser</p>
                         <a href="loginform.html"> <i class="fas fa-user-circle userIcon"></i> </a>
                     </div>
             </div>

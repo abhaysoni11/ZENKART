@@ -107,8 +107,8 @@ httpRequest.onreadystatechange = function()
             document.getElementById("totalItem").innerHTML = ('Total Items: ' + counter)
 
             let item = document.cookie.split(',')[0].split('=')[1].split(" ")
-            console.log(counter)
-            console.log(item)
+            console.log("Counter Value :",counter)
+            console.log("Item Value:",item)
 
             let i;
             let totalAmount = 0
@@ -119,6 +119,7 @@ httpRequest.onreadystatechange = function()
                 {   
                     if(Number(item[j]) == Number(item[i]))
                     {
+                        console.log(`Items : ${item[j]} ${item[i]}`)
                         itemCounter +=1;
                     }
                 }

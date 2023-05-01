@@ -1,199 +1,81 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-/* Add padding to containers */
-.container {
-  padding: 16px;
-  background-color: white;
-  
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password], input[type=email] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Overwrite default styles of hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for the submit button */
-.registerbtn {
-  background-color: #277156;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  background-color: white;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.registerbtn:hover {
-  opacity: 1;
-}
-
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color:white;
-  text-align: center;
-}
-</style>
-</head>
-<body>
-<form action="/action_page.php">
-    <div class="imgcontainer">
-        <img src="/img/avatar.png" alt="Avatar" class="avatar">
-      </div>
-  <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-
-    <label for="user"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="Username" id="Username" required>
-
-    <label for="email"><b>Email</b></label>
-    <input type="email" placeholder="Enter Email" name="email" id="email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <hr>
-    <p>By creating an account you agree to our <a href="terms.html">Terms & Policies</a>.</p>
-
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
-  
-  <div class="container signin">
-    <p>Already have an account? <a href="loginform.html">Login</a>.</p>
-  </div>
-</form>
-
-</body>
-</html> -->
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up</title>
-
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <!-- Main css -->
-    <link rel="stylesheet" href="css/signin_style.css">
-</head>
-
+    <!--<title> Registration or Sign Up form in HTML CSS | CodingLab </title>-->
+    <link rel="stylesheet" href="signup.css">
+   </head>
 <body>
-
-    <div class="main">
-
-        <!-- Sign up form -->
-        <section class="signup">
-            <div class="container">
-                <div class="signup-content">
-                    <div class="signup-form">
-                        <h2 class="form-title">Sign up</h2>
-                        <form name="registerform" method="POST" class="register-form" id="registerform" onsubmit="return verifyPassword()">
-                            <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"><img src="/img/icons8-customer-50.png" height="20" width="20"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"><img src="/img/email.png" height="20" width="20"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email" required oninput="return validateEmail(document.registerform.email)"/>
-                                
-                            </div>
-                            <span id = "message1" style="color:red"></span>
-                            <!-- <div class="form-group">
-                                <label for="validationCustom04" class="form-label"></label>
-                                <select class="form-select" id="validationCustom04" required>
-                                    <option selected disabled value="">Role...</option>
-                                    <option>Student</option>
-                                    <option>Instructor</option>
-                                </select>
-                            </div> -->
-                            <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"><img src="/img/padlock.png" height="20" width="20"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password" required oninput="return verifyPassword()"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"><img src="/img/padlock.png" height="20" width="20"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" required oninput="return Validate()"/>
-                            </div>
-                          <span id = "message" style="color:red"></span>
-                            <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required/>
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all
-                                    statements in <a href="terms.html" class="term-service">Terms of service</a></label>
-                            </div>
-                            <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
-                            </div>
-                        </form>
-                    </div>
-                    <div class="signup-image">
-                        <figure><img src="img/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="loginform.html" class="signup-image-link">I am already member</a>
-                        <br>
-                        <a href="index.html" class="signup-image-link">BACK TO HOME</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/signin_main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
+  <div class="wrapper">
+    <h2>Registration</h2>
+    <form action="#" onsubmit="handleSubmit()">
+      <div class="input-box">
+        <input type="text" placeholder="Enter your name" id="name" required>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Enter your email" id="email" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Create password" id="password" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Confirm password" id="cnfPassword" required>
+      </div>
+      <div class="policy">
+        <input type="checkbox" id="myCheckBox" onclick="aceeptTermCondition()">
+        <h3>I accept all terms & condition</h3>
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Register Now">
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="loginform.html">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+  <script>
+     function aceeptTermCondition(){
+      console.log("Function Called::::::::::::::::")
+      var checkBox = document.getElementById("myCheckBox");
+      if(checkBox.checked == true){
+        return true;
+      }else{
+        return false;
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    var name,email,password,cnfPassword;
+    function formValidation(){
+      name = document.getElementById("name").value;
+      email = document.getElementById("email").value;
+      password = document.getElementById("password").value;
+      cnfPassword = document.getElementById("cnfPassword").value;
+      if(name.length>0 && email.length>0 && password.length >0 && password === cnfPassword && aceeptTermCondition()===true){
+        return true;
+      }
+      return false;
+    }
+    async function handleSubmit (){
+      if(formValidation() === true){
+        try{
+          const response = await axios.post("http://127.0.0.1:8080/signUp",{
+            Name : name,
+            Email : email,
+            Password : password 
+          });
+          if(response){
+            location.href = "loginform.html";
+          }
+        }catch(e)
+        {
+          console.log("Error to send Data in Database");
+        }
+      }
+    }
+  </script>
+</body>
 </html>

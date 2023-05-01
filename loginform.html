@@ -1,176 +1,65 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;
-    background-image:src;
-}
-form {border: 3px solid #f1f1f1;}
-
-input[type=text], input[type=password] {
-  width:100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #23614a;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-span.register {
-  float: right;
-  padding-top: 16px;
-  padding-right: 10px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-</style>
-</head>
-<body>
-
-<h2>Login Form</h2>
-
-<form action="/action_page.php" method="post">
-  <div class="imgcontainer">
-    <img src="/img/avatar.png" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <a href="index.html"><button type="button" class="cancelbtn">Cancel</button></a>
-    <span class="psw"><a href="forget.html">Forgot password?</a></span>
-    <span class="register"><a href="register.html" style="text-decoration: none;"><U>Register Me!!</U></a></span>
-  </div>
-</form>
-
-</body>
-</html> -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign In</title>
-
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-
-    <!-- Main css -->
-    <link rel="stylesheet" href="css/signin_style.css">
-</head>
-<body>
-    <div class="main">
-        <section class="sign-in">
-            <div class="container">
-                <div class="signin-content">
-                    <div class="signin-image">
-                        <figure><img src="/img/signin-image.jpg" alt="sing up image"></figure>
-                        <a href="register.html" class="signup-image-link">Create an account</a>
-                        <br>
-                        <a href="index.html" class="signup-image-link">BACK TO HOME</a>
-                    </div>
-
-                    <div class="signin-form">
-                        <h2 class="form-title">Sign In</h2>
-                        <form method="POST" name="signin" class="register-form" id="login-form">
-                            <div class="form-group">
-                                <label for="your_name"><i class="fa fa-envelope" aria-hidden="true"><img src="/img/icons8-customer-50.png" width="20" height="20"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Email ID" required oninput="return validateEmail(document.signin.email)"/>
-                            </div>
-                            <span id = "message1" style="color:red"></span>
-                            <div class="form-group">
-                                <label for="your_pass"><i class="zmdi zmdi-lock"><img src="/img/padlock.png" width="20" height="20"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Password" required/>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
-                            </div>
-                            <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
-                            </div>
-                        </form>
-                        <div class="social-login">
-                            <span class="social-label">Or login with</span>
-                            <ul class="socials">
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"><img src="/img/facebook.png"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"><img src="/img/twitter.png"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"><img src="/img/google (1).png"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   <!----<title>Login Form Design | CodeLab</title>---->
+    <link rel="stylesheet" href="login.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">Login Form</div>
+      <form action="#" onsubmit="validateInputField()">
+        <div class="field">
+          <input type="email" id="email" required>
+          <label>Email Address</label>
+        </div>
+        <div class="field">
+          <input type="password" id="password" required>
+          <label>Password</label>
+        </div>
+        <div class="content">
+          <div class="checkbox">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Remember me</label>
+          </div>
+          <div class="pass-link"><a href="#">Forgot password?</a></div>
+        </div>
+        <div class="field">
+          <input type="submit" value="Login">
+        </div>
+        <div class="signup-link">Not a member? <a href="register.html">Signup now</a></div>
+      </form>
     </div>
-
-    <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/signin_main.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/index.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./userLoginData/userDataModel.js"></script>
+    <script>
+      var email,password;
+      async function validateInputField(){
+        email = document.getElementById("email").value;
+        password = document.getElementById("password").value;
+        if(email.length > 0 && password.length > 0)
+        {
+          try{
+            const response = await axios.get("http://127.0.0.1:8080/login",{
+              params : {
+                Email : email,
+                Password : password
+              }
+            })
+            if(response.data!="")
+            {
+              userCredData.changeName = response.data.name;
+              userCredData.changeEmail = response.data.email;
+              location.href = "index.html";
+            }else{
+              location.href = "loginform.html";
+            }
+          }catch(e){
+            console.log("Error To Make get Api Call ::::::: ",e);
+          }
+        }
+      }
+    </script>
+  </body>
 </html>
